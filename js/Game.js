@@ -32,7 +32,48 @@ class Game {
    * Begins game by selecting a random phrase and displaying it to user
    */
   startGame() {
-    document.getElementById('overlay').style.display = 'none';
+    overlay.style.display = 'none';
     this.getRandomPhrase().addPhraseToDisplay();
   }
+
+  /**
+  * Checks for winning move
+  * @return {boolean} True if game has been won, false if game wasn't
+  won
+  */
+  checkForWin() {
+    
+    
+  }
+
+  /**
+  * Increases the value of the missed property
+  * Removes a life from the scoreboard
+  * Checks if player has remaining lives and ends game if player is out
+  */
+  removeLife() {
+
+  }
+
+  /**
+  * Displays game over message
+  * @param {boolean} gameWon - Whether or not the user won the game
+  */
+  gameOver(gameWon) {
+    overlay.style.display = 'block';
+    overlay.classList.remove('start');
+
+    const gameOverMsg = document.getElementById('game-over-message');
+
+    if (gameWon == true) {
+      overlay.classList.add('win');
+      gameOverMsg.innerText = 'Congratulations!  Play again?';
+    } else {
+      overlay.classList.add('lose');
+      gameOverMsg.innerText = 'You ran out of lives.  Try again?';
+    }
+    
+  }
+
+
 }
