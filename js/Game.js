@@ -52,7 +52,13 @@ class Game {
   * Checks if player has remaining lives and ends game if player is out
   */
   removeLife() {
-
+    const heartList = document.querySelectorAll('.tries');
+    var last = heartList[heartList.length - (this.missed + 1)];
+    last.firstChild.src = 'images/lostHeart.png';
+    this.missed += 1;
+    if (this.missed === 5) {
+      this.gameOver(false);
+    }
   }
 
   /**
