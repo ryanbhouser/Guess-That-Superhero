@@ -24,6 +24,6 @@ class Game {
    */
   getRandomPhrase() {
     const random = Math.floor(Math.random() * this.phrases.length);
-    return this.phrases[random];
+    return new Phrase(this.phrases[random]);
   }
 }
