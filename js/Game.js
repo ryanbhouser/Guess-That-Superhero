@@ -94,6 +94,32 @@ class Game {
   * @param (HTMLButtonElement) button - The clicked button element
   */
   handleInteraction(button) {
-    console.log(button);
+    const buttonLetter = button.textContent;
+    button.disabled = true;
+    if (!this.activePhrase.checkLetter(buttonLetter)) {
+      button.classList.add('wrong');
+      this.removeLife();
+    } else {
+      button.classList.add('chosen');
+      this.activePhrase.showMatchedLetter(buttonLetter);
+      if (this.checkForWin()) {
+        this.gameOver(true);
+      }
+    }
   }
 }
+
+// Build out the `handleInteraction()` method in the Game class making use of the support
+// methods that you created in step 9. This method controls most of the game logic. It checks to
+// see if the onscreen keyboard button clicked by the player matches a letter in the phrase, and
+// then directs the game based on a correct or incorrect guess. This method should:
+
+// ● Disable the selected letter’s onscreen keyboard button.
+
+// ● If the phrase does not include the guessed letter, add the `wrong` CSS class to the
+// selected letter's keyboard button and call the `removeLife()` method.
+
+// ● If the phrase includes the guessed letter, add the `chosen` CSS class to the selected
+// letter's keyboard button, call the `showMatchedLetter()` method on the phrase, and then
+// call the `checkForWin()` method. If the player has won the game, also call the
+// `gameOver()` method.
