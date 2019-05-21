@@ -9,11 +9,11 @@ class Game {
   constructor() {
     this.missed = 0;
     this.phrases = [
-      'cat',
-      'dog',
-      'bird',
-      'fish',
-      'pet'
+      'Doctor Strange',
+      'Captain America',
+      'Black Widow',
+      'Nick Fury',
+      'Captain Marvel'
     ];
     this.activePhrase = null;
   }
@@ -45,7 +45,7 @@ class Game {
     const allLi = document.querySelectorAll('li');
     let flag = false;
     for (let li of allLi) {
-      if (li.classList.contains('hide')) {
+      if (li.classList.contains('hide') && !li.classList.contains('space')) {
         flag = false;
         break;
       } else {
