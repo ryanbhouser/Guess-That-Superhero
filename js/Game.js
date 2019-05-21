@@ -81,9 +81,13 @@ class Game {
     const gameOverMsg = document.getElementById('game-over-message');
 
     if (gameWon == true) {
+      overlay.classList.remove('win');
+      overlay.classList.remove('lose');
       overlay.classList.add('win');
       gameOverMsg.innerText = 'Congratulations!  Play again?';
     } else {
+      overlay.classList.remove('win');
+      overlay.classList.remove('lose');
       overlay.classList.add('lose');
       gameOverMsg.innerText = 'You ran out of lives.  Try again?';
     }
