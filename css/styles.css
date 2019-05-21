@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700&Roboto:300');
 
 /* Variables */
-
 :root {
   --color-win: #78CF82;
   --color-lose: #D94545;
@@ -17,7 +16,6 @@
 }
 
 /* main */
-
 * {
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
@@ -28,6 +26,9 @@ body {
   flex-direction: column;
   display: flex;
   height: 100vh;
+  background-image: url(../images/game_start_background.png);
+  background-size: cover;
+  background-position: center;
 }
 
 li, ol, ul {
@@ -83,15 +84,7 @@ button {
   margin-top: 15px;
 }
 
-/* Title */
-
-.header {
-  color: #3a3f58;
-}
-
-
 /* Phrase */
-
 .letter {
   font-size: var(--font-size-medium);
   height: 65px;
@@ -107,11 +100,9 @@ button {
   width: 15px;
 }
 
-
-
 .show {
-  color: #fff;
-  background-color: #4ac0d5;
+  color: rgb(0, 0, 0);
+  background-color: #FBB03B;
   font-size: 20px;
   height: 65px;
   width: 65px;
@@ -122,23 +113,21 @@ button {
   animation-duration: .5s;
 }
 
-
 /* Keyboard */
-
 .keyrow {
   display: flex;
   justify-content: center;
 }
 
 .chosen {
-  background: #3a3f58;
+  background: var(--color-win);
   border-radius: 5px;
   font-size: var(--font-size-medium);
   color: #FFFFFF;
 }
 
 .wrong {
-  background: #f7a964;
+  background: var(--color-lose);
   color: #FFFFFF;
 }
 
@@ -159,9 +148,7 @@ button {
   border-right: solid 3px rgba(0, 0, 0, 0);
 }
 
-
 /* Overlay */
-
 #overlay {
   display: flex;
   flex-direction: column;
@@ -175,12 +162,32 @@ button {
   border-radius: 5px;
 }
 
-.title {
-  color: #FFF;
+.game_logo {
+  width: 700px;
+}
+
+.logo_animation {
+  animation: logoMove 3s .03s infinite ease-in-out;
+}
+
+@keyframes logoMove {
+  0% {
+    transform: scale(1) rotate(2deg);
+  }
+
+  50% {
+    transform: scale(1.1) rotate(-2deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(2deg);
+  }
 }
 
 .start {
-  background-color: #3a3f58;
+  background-image: url(../images/game_start_background.png);
+  background-size: cover;
+  background-position: center;
 }
 
 .start a {
@@ -188,17 +195,15 @@ button {
 }
 
 .win {
-  background-color: var(--color-win);
-}
-
-.win a {
-  color: var(--color-win);
+  background: url(../images/game_win_bg.png);
+  background-size: cover;
+  background-position: center;
+  padding-top: 250px;
 }
 
 .lose {
-  background-color: #f5785f;
-}
-
-.lose a {
-  color: var(--color-lose);
+  background: url(../images/game_lose_bg.png);
+  background-size: cover;
+  background-position: center;
+  padding-top: 250px;
 }

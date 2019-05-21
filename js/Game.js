@@ -84,12 +84,12 @@ class Game {
       overlay.classList.remove('win');
       overlay.classList.remove('lose');
       overlay.classList.add('win');
-      gameOverMsg.innerText = 'Congratulations!  Play again?';
+      gameOverMsg.innerText = 'You saved the day!  Play again?';
     } else {
       overlay.classList.remove('win');
       overlay.classList.remove('lose');
       overlay.classList.add('lose');
-      gameOverMsg.innerText = 'You ran out of lives.  Try again?';
+      gameOverMsg.innerText = 'You lost!  Reset the universe and try again?';
     }
   }
 
