@@ -16,3 +16,7 @@ document.getElementById('qwerty').addEventListener('click', (e) => {
     game.handleInteraction(e.target);
   }
 });
+
+window.addEventListener('keydown', (e) => {
+  game.physKeyboardInteraction(e.key);
+});

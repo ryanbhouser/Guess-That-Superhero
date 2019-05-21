@@ -108,6 +108,16 @@ class Game {
     }
   }
 
+  physKeyboardInteraction(key) {
+    const buttons = document.querySelectorAll('button');
+    
+    for (let i = 0; i < buttons.length; i++) {
+      if (key === buttons[i].textContent) {
+        this.handleInteraction(buttons[i]);
+      }
+    }
+  }
+
   resetGame() {
     // Remove all lis from phrase ul
     while (phraseUl.firstChild) {
