@@ -107,19 +107,26 @@ class Game {
       }
     }
   }
+
+  resetGame() {
+    // Remove all lis from phrase ul
+    while (phraseUl.firstChild) {
+      phraseUl.removeChild(phraseUl.firstChild);
+    }
+
+    // Enable all buttons
+    const btns = document.querySelectorAll('button');
+    for (let i=0; i<btns.length; i++) {
+      btns[i].classList.remove('chosen');
+      btns[i].classList.remove('wrong');
+      btns[i].disabled = false;
+    }
+
+    // Refill hearts
+    this.missed = 0;
+    const heartList = document.querySelectorAll('.tries');
+    for (let i=0; i < heartList.length; i++) {
+      heartList[i].firstChild.src = 'images/liveHeart.png';
+    }
+  }
 }
-
-// Build out the `handleInteraction()` method in the Game class making use of the support
-// methods that you created in step 9. This method controls most of the game logic. It checks to
-// see if the onscreen keyboard button clicked by the player matches a letter in the phrase, and
-// then directs the game based on a correct or incorrect guess. This method should:
-
-// ● Disable the selected letter’s onscreen keyboard button.
-
-// ● If the phrase does not include the guessed letter, add the `wrong` CSS class to the
-// selected letter's keyboard button and call the `removeLife()` method.
-
-// ● If the phrase includes the guessed letter, add the `chosen` CSS class to the selected
-// letter's keyboard button, call the `showMatchedLetter()` method on the phrase, and then
-// call the `checkForWin()` method. If the player has won the game, also call the
-// `gameOver()` method.

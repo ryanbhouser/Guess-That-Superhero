@@ -10,8 +10,6 @@ class Phrase {
    * Display phrase on game board
    */
   addPhraseToDisplay() {
-    const phraseUl = document.querySelector('#phrase ul');
-
     // Loops through each character in this.phrase
     for (let i = 0; i < this.phrase.length; i++) {
       // return character, otherwise will return the index
