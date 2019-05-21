@@ -22,3 +22,14 @@ window.addEventListener('keydown', (e) => {
   game.physKeyboardInteraction(e.key);
 });
 
+// Allows user to use the Enter key to re/start the game
+window.addEventListener('keydown', (e) => {
+  if (overlay.style.display != 'none') {
+    if (e.keyCode === 13) {
+      game = new Game();
+      game.resetGame();
+      game.startGame();
+    }
+  }
+});
+
