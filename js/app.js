@@ -21,6 +21,7 @@ document.getElementById('qwerty').addEventListener('click', (e) => {
 // EXTRA CREDIT :)
 window.addEventListener('keydown', (e) => {
   pressedKeys.push(e.key);
+  console.log(pressedKeys);
   game.physKeyboardInteraction(e.key);
 });
 

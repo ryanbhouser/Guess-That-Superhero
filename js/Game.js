@@ -112,9 +112,9 @@ class Game {
   physKeyboardInteraction(key) {
     const buttons = document.querySelectorAll('button');
 
-    for (let i = 0; i < pressedKeys.length; i++) {
+    for (let i = 1; i < pressedKeys.length; i++) {
       if (key != pressedKeys[i]) {
-        for (let i = 0; i < buttons.length; i++) {
+        for (let j = 0; j < buttons.length; j++) {
           if (key === buttons[i].textContent) {
             this.handleInteraction(buttons[i]);
           }
