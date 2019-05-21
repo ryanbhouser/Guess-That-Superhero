@@ -9,11 +9,11 @@ class Game {
   constructor() {
     this.missed = 0;
     this.phrases = [
-      'When the Rubber Hits the Road',
-      'Throw In the Towel',
-      'Mountain Out of a Molehill',
-      'Fish Out Of Water',
-      'Head Over Heels'
+      'cat',
+      'dog',
+      'bird',
+      'fish',
+      'pet'
     ];
     this.activePhrase = null;
   }
