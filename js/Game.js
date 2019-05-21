@@ -42,8 +42,17 @@ class Game {
   won
   */
   checkForWin() {
-    
-    
+    const allLi = document.querySelectorAll('li');
+    let flag = false;
+    for (let li of allLi) {
+      if (li.classList.contains('hide')) {
+        flag = false;
+        break;
+      } else {
+        flag = true;
+      }
+    }
+    return flag;
   }
 
   /**
