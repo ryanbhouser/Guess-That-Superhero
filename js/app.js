@@ -2,6 +2,7 @@ const startGameBtn = document.getElementById('btn__reset');
 const phraseSection = document.getElementById('phrase');
 const phraseUl = document.querySelector('#phrase ul');
 const overlay = document.getElementById('overlay');
+const pressedKeys = [];
 
 let game;
 startGameBtn.addEventListener('click', () => {
@@ -17,6 +18,9 @@ document.getElementById('qwerty').addEventListener('click', (e) => {
   }
 });
 
+// EXTRA CREDIT :)
 window.addEventListener('keydown', (e) => {
+  pressedKeys.push(e.key);
   game.physKeyboardInteraction(e.key);
 });
+
