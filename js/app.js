@@ -9,7 +9,6 @@ startGameBtn.addEventListener('click', () => {
   game = new Game();
   game.resetGame(); // Reset game if played before
   game.startGame();
-  console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
 });
 
 document.getElementById('qwerty').addEventListener('click', (e) => {
@@ -20,8 +19,6 @@ document.getElementById('qwerty').addEventListener('click', (e) => {
 
 // EXTRA CREDIT :)
 window.addEventListener('keydown', (e) => {
-  pressedKeys.push(e.key);
-  console.log(pressedKeys);
   game.physKeyboardInteraction(e.key);
 });
 

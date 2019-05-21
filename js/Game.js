@@ -110,17 +110,17 @@ class Game {
 
   // EXTRA CREDIT :)
   physKeyboardInteraction(key) {
-    const buttons = document.querySelectorAll('button');
-
-    for (let i = 1; i < pressedKeys.length; i++) {
-      if (key != pressedKeys[i]) {
-        for (let j = 0; j < buttons.length; j++) {
-          if (key === buttons[i].textContent) {
-            this.handleInteraction(buttons[i]);
-          }
+    const buttons = [].slice.call(document.querySelectorAll('button'));
+    
+    for (let i = 0; i < buttons.length; i++) {
+      if (!pressedKeys.includes(key)) {
+        if (key === buttons[i].textContent) {
+          this.handleInteraction(buttons[i]);
         }
       }
     }
+    
+    pressedKeys.push(key);
   }
 
   resetGame() {
@@ -143,5 +143,8 @@ class Game {
     for (let i=0; i < heartList.length; i++) {
       heartList[i].firstChild.src = 'images/liveHeart.png';
     }
+
+    // Reset pressedKeys array
+    pressedKeys.length = 0;
   }
 }
