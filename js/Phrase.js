@@ -36,15 +36,35 @@ class Phrase {
   * Checks if passed letter is in phrase
   * @param (string) letter - Letter to check
   */
-  checkLetter() {
-    
+  checkLetter(letter) {
+    const hiddenPhrase = document.querySelectorAll('li.hide');
+    let flag = false;
+    for (let i=0; i < hiddenPhrase.length; i++) {
+      if (letter === hiddenPhrase[i].textContent) {
+        flag = true;
+        break;
+      } else {
+        flag = false;
+      }
+    }
+    return flag;
   }
 
   /**
   * Displays passed letter on screen after a match is found
   * @param (string) letter - Letter to display
+  * Reveals the letter(s) on the board that matches the
+player's selection. To reveal the matching letter(s), select all of the letter DOM
+elements that have a CSS class name that matches the selected letter and
+replace each selected element's `hide` CSS class with the `show` CSS class.
   */
-  showMatchedLetter() {
-
+  showMatchedLetter(letter) {
+    if (this.phrase.includes(letter)) {
+      const letterLi = document.querySelectorAll(`.${letter}`);
+      for (let li of letterLi) {
+        li.classList.remove('hide');
+        li.classList.add('show');
+      }
+    }
   }
 }
