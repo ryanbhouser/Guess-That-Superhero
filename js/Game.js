@@ -87,8 +87,13 @@ class Game {
       overlay.classList.add('lose');
       gameOverMsg.innerText = 'You ran out of lives.  Try again?';
     }
-    
   }
 
-
+  /**
+  * Handles onscreen keyboard button clicks
+  * @param (HTMLButtonElement) button - The clicked button element
+  */
+  handleInteraction(button) {
+    console.log(button);
+  }
 }

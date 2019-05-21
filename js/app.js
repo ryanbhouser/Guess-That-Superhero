@@ -8,3 +8,9 @@ startGameBtn.addEventListener('click', () => {
   game.startGame();
   console.log(`Active Phrase - phrase: ${game.activePhrase.phrase}`);
 });
+
+document.getElementById('qwerty').addEventListener('click', (e) => {
+  if (e.target.tagName === 'BUTTON') {
+    game.handleInteraction(e.target);
+  }
+});
