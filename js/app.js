@@ -2,6 +2,7 @@ const startGameBtn = document.getElementById('btn__reset');
 const phraseSection = document.getElementById('phrase');
 const phraseUl = document.querySelector('#phrase ul');
 const overlay = document.getElementById('overlay');
+// Toggles the second image off so that it 
 const hideLogo = document.querySelector('.logo_hide');
 hideLogo.style.display = 'none';
 const pressedKeys = [];
