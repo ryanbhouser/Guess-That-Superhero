@@ -13,7 +13,25 @@ class Game {
       'Captain America',
       'Black Widow',
       'Nick Fury',
-      'Captain Marvel'
+      'Captain Marvel',
+      'Batman',
+      'Black Panther',
+      'Iron Man',
+      'The Hulk',
+      'Hawkeye',
+      'Antman',
+      'Spiderman',
+      'Aquaman',
+      'Stan Lee',
+      'Wonder Woman',
+      'Superman',
+      'Scarlet Witch',
+      'Rocket Racoon',
+      'Gamora',
+      'Ghost Rider',
+      'Human Torch',
+      'Silver Surfer',
+      'Green Lantern'
     ];
     this.activePhrase = null;
   }
@@ -77,6 +95,7 @@ class Game {
   gameOver(gameWon) {
     overlay.style.display = 'block';
     overlay.classList.remove('start');
+    
 
     const gameOverMsg = document.getElementById('game-over-message');
 
