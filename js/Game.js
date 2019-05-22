@@ -51,6 +51,7 @@ class Game {
    */
   startGame() {
     overlay.style.display = 'none';
+    hideLogo.style.display = '';
     this.getRandomPhrase().addPhraseToDisplay();
   }
 
@@ -94,6 +95,7 @@ class Game {
   */
   gameOver(gameWon) {
     overlay.style.display = 'block';
+    hideLogo.style.display = 'none';
     overlay.classList.remove('start');
     
 
